@@ -1,0 +1,36 @@
+<div class="row" style="background-color:#9521B3; padding: 12px; border-radius: 12px">
+  <div class="col-md-3">
+      <h2 style="color:white"><i class = "fa fa-users" style="color:white"></i> Clients</h2>
+  </div>
+  <div class="col-md-3">
+      <i class="fa fa-user-plus" style="color:white; font-size: 250%"></i><button type="button" class="btn" style="background-color: #9521B3; color: white" routerLink="/add-client"><strong>Add Member</strong></button>
+  </div>
+  <div class="col-md-6">
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control w-75 mt-1" type="text" placeholder="Search" aria-label="Search" placeholder="Search for a member...">
+      </form>
+  </div>
+</div>
+
+<table *ngIf="clients?.length > 0; else noClients" class="table table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Name</th>
+        <th>Membership Type</th>
+        <th>Phone Number</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.memberName}}</td>
+        <td>{{client.membership}}</td>
+        <td>{{client.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noClients > 
+    <hr>
+    <h5>There are no clients</h5>
+  </ng-template>
