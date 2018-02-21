@@ -24,6 +24,10 @@ export class ClientService {
     });
 
     return this.members;
+  } 
+
+  newMember(client: Client) {
+      this.membersCollection.add(client); 
   }
 
 }
