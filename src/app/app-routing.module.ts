@@ -14,8 +14,8 @@ import { DetailsComponent } from './components/details/details.component';
 const routes: Routes = [
   {path:'', component: DashboardComponent},
   {path:'login', component: LoginComponent},
-  {path:'add-client', component: AddClientComponent},
-  {path:'details', component: DetailsComponent},
+  {path:'client/add', component: AddClientComponent},
+  {path:'client/:id', component: DetailsComponent},
   {path:'**', component: PageNotFoundComponent},
 ]
 

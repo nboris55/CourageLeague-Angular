@@ -3,7 +3,7 @@
       <h2 style="color:white"><i class = "fa fa-users" style="color:white"></i> Clients</h2>
   </div>
   <div class="col-md-3">
-    <button type="button" class="btn" style="background-color: #9521B3; color: white; font-size: 20px" routerLink="/add-client"><i class="fa fa-user-plus"></i><strong>Add Member</strong></button>
+    <button type="button" class="btn" style="background-color: #9521B3; color: white; font-size: 20px" routerLink="client/add"><i class="fa fa-user-plus"></i><strong>Add Member</strong></button>
   </div>
   <div class="col-md-6">
     <form class="form-inline my-2 my-lg-0">
@@ -26,8 +26,7 @@
         <td>{{client.memberName}}</td>
         <td>{{client.membership}}</td>
         <td>{{client.phone}}</td>
-        <td><a [routerLink]="['/member/' + client.key]"href="" class = "btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>
-          Details</a></td>
+        <td><a routerLink="client/{{ client.id }}" class = "btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
       </tr>
     </tbody>
   </table>
