@@ -1,27 +1,24 @@
-<body class="text-center">
-  <form class="form-signin">
-
+<form class="form-signin">
+  <div class="text-center">
     <img class="mb-4" src="https://www.courageleaguesports.com/wp-content/uploads/2017/02/cls-logo-218x300.png" alt="" width="200" height="250">
-
     <h1 class="h2 mb-4 font-weight-normal" style="color:#9521B3"><strong>Please Sign In</strong></h1>
-
-    <div class="mb-2">
-    <label for="inputUserName" class="sr-only">User Name</label>
-    <input type="string" class="form-control" placeholder="Username" required autofocus>
-    </div>
-
-    <div class="mb-2">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    </div>
-
-    <button class="btn btn-lg btn-block mb-2" style="background-color: #9521B3; color:aliceblue" type="submit">Sign in</button>
-    <div class="text-left mb-0">
-        <label class="mb-0">
-         <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-    
-      <a class="nav-link text-left" href="" routerLink="">Forgot Password</a>
-  </form>
-</body>
+    <div class="row">
+  </div>
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <form (submit)="onSubmit()">
+                <div class="form-group">
+                  <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Email.." required>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password.." required>
+                </div>
+                <input type="submit" value= "Submit" style="background-color:#9521B3" class="btn btn-primary btn-block">
+              </form>
+            </div>
+          </div>
+          <a class="nav-link text-left" href="" routerLink="">Forgot Password</a>
+        </div>
+      </div>   
+</form>

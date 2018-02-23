@@ -20,6 +20,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     FormsModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [ClientService],
+  providers: [ClientService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

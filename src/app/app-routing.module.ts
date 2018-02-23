@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,12 +16,12 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 const routes: Routes = [
-  {path:'', component: DashboardComponent},
-  {path:'calendar',component: CalendarComponent},
+  {path:'', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path:'calendar',component: CalendarComponent, canActivate:[AuthGuard]},
   {path:'login', component: LoginComponent},
-  {path:'client/add', component: AddClientComponent},
-  {path:'client/:id', component: DetailsComponent},
-  {path:'client/edit/:id', component: EditClientComponent},
+  {path:'client/add', component: AddClientComponent, canActivate:[AuthGuard]},
+  {path:'client/:id', component: DetailsComponent, canActivate:[AuthGuard]},
+  {path:'client/edit/:id', component: EditClientComponent, canActivate:[AuthGuard]},
   {path:'**', component: PageNotFoundComponent}
 ]
 
@@ -30,6 +31,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  providers:[AuthGuard]
 })
 export class AppRoutingModule { }
