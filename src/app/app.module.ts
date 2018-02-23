@@ -19,6 +19,7 @@ import { ClientService } from './services/client.service';
 import { DetailsComponent } from './components/details/details.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
     AddClientComponent,
     PageNotFoundComponent,
     DetailsComponent,
-    EditClientComponent
+    EditClientComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

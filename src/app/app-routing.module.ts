@@ -11,10 +11,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ClientService } from './services/client.service';
 import { DetailsComponent } from './components/details/details.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 const routes: Routes = [
   {path:'', component: DashboardComponent},
+  {path:'calendar',component: CalendarComponent},
   {path:'login', component: LoginComponent},
   {path:'client/add', component: AddClientComponent},
   {path:'client/:id', component: DetailsComponent},
