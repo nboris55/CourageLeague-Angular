@@ -15,7 +15,7 @@
     <div class="card-body">
       <form #clientForm="ngForm"(ngSubmit)="onSubmit(clientForm)">
         <div class="form-group">
-            <label class="memberName">Member Name</label>
+            <label class="memberName">Members Name</label>
             <input type="text"
             class="form-control"
             name="memberName"
@@ -30,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            <label class="guardianName">Guardian Name</label>
+            <label class="guardianName">Guardians Name</label>
             <input type="text"
             class="form-control"
             name="guardianName"
@@ -43,6 +43,22 @@
             <div [hidden]='!clientguardianName.errors?.required' class='invalid-feedback'>Guardians Name is required</div>
             <div [hidden]='!clientguardianName.errors?.minlength' class='invalid-feedback'>Must be at least 2 names</div>
         </div>
+
+        <div class="form-group">
+            <label for="guardianPhone">Guardians Phone</label>
+            <input 
+             type="text"
+             class="form-control" 
+             [ngClass] = "{'is-invalid' : clientguardianPhone.errors?.required && clientguardianPhone.touched || clientguardianPhone.errors?.pattern}"
+             [(ngModel)]="client.guardianPhone" name= "guardianPhone" #clientguardianPhone = "ngModel" required
+             pattern = "\d{3}[\-]\d{3}[\-]\d{4}">
+            <div *ngIf = "clientguardianPhone.errors?.required && clientguardianPhone.touched" class = "invalid-feedback">
+              Phone is required
+            </div>
+            <div *ngIf = "clientguardianPhone.errors?.pattern && clientguardianPhone.touched" class = "invalid-feedback">
+                Phone number is invalid, please include area code and dashes (xxx-xxx-xxxx)
+              </div>
+          </div>
 
         <div class="form-group">
           <label for="email">Email Address</label>

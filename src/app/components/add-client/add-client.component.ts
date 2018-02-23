@@ -15,8 +15,9 @@ export class AddClientComponent implements OnInit {
  client: Client ={
    memberName: '',
    guardianName:'',
+   guardianPhone: '',
    email: '',
-   phone: 0,
+   phone: '',
    membership: '',
    }
 

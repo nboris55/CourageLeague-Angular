@@ -10,13 +10,16 @@ import { AddClientComponent } from './components/add-client/add-client.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ClientService } from './services/client.service';
 import { DetailsComponent } from './components/details/details.component';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
+
 
 const routes: Routes = [
   {path:'', component: DashboardComponent},
   {path:'login', component: LoginComponent},
   {path:'client/add', component: AddClientComponent},
   {path:'client/:id', component: DetailsComponent},
-  {path:'**', component: PageNotFoundComponent},
+  {path:'client/edit/:id', component: EditClientComponent},
+  {path:'**', component: PageNotFoundComponent}
 ]
 
 @NgModule({

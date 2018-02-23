@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-6">
     <div class="btn-group pull-right">
-      <a routerLink=""  class="btn btn-dark">Edit</a>
+      <a routerLink='/client/edit/{{ id }}'  class="btn btn-dark">Edit</a>
       <button class="btn btn-danger">Delete Client</button>
     </div>
   </div> 
@@ -21,8 +21,11 @@
     </div>
     <hr>
     <ul class="list-group">
+      <li class="list-group-item">Guardians Name: {{client.guardianName}}</li>
+      <li class="list-group-item">Guardians Phone: {{client.guardianPhone}}</li>
       <li class="list-group-item">Contact Email: {{client.email}}</li>
       <li class="list-group-item">Contact Phone: {{client.phone}}</li>
+      <li class="list-group-item">Membership Type: {{client.membership}}</li>
     </ul>
   </div>
 

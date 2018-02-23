@@ -2,8 +2,9 @@ export interface Client {
     id?:string;
     memberName?:string;
     guardianName?:string;
+    guardianPhone?:string;
     email?:string;
-    phone?:number;
+    phone?:string;
     membership?:string;
 }
 

@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ClientService } from './services/client.service';
 import { DetailsComponent } from './components/details/details.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './/app-routing.module';
     ClientsComponent,
     AddClientComponent,
     PageNotFoundComponent,
-    DetailsComponent
+    DetailsComponent,
+    EditClientComponent
   ],
   imports: [
     BrowserModule,
