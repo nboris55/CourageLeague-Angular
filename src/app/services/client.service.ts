@@ -45,4 +45,14 @@ export class ClientService {
     return this.member;
   }
 
+  updateMember(client: Client) {
+    this.memberDoc = this.afs.doc<Client> (`members/${client.id}`);
+    this.memberDoc.update(client);
+  }
+
+  deleteMember(client: Client) {
+    this.memberDoc = this.afs.doc<Client> (`members/${client.id}`);
+    this.memberDoc.delete();
+  }
+
 }

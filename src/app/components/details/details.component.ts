@@ -29,4 +29,14 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  onDelete() {
+    if ((confirm('Are you sure?'))) {
+      this.clientService.deleteMember(this.client);
+      this.flashMessage.show('Client has been removed', {
+        cssClass: 'alert-success', timeout: 2000
+      });
+      this.router.navigate(['/']);
+    }
+  }
+
 }
